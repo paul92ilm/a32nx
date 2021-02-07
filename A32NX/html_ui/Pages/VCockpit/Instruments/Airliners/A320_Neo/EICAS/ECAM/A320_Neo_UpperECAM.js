@@ -449,13 +449,67 @@ var A320_Neo_UpperECAM;
                     },
                     //Airborne
                     {
-                        name: "OVERSPEED",
+                        name: "OVER SPEED",
                         messages: [
                             {
                                 message: "",
                                 level: 3,
                                 flightPhasesInhib: [2, 3, 4, 8, 9, 10],
-                                isActive: () => Simplane.getIndicatedSpeed() > (this.getCachedSimVar("L:A32NX_SPEEDS_VMAX", "number") + 4),
+                                isActive: () => (
+                                    (Simplane.getFlapsHandleIndex() == 4) &&
+                                    (Simplane.getIndicatedSpeed() > 177)
+                                ),
+                                actions: [
+                                    {
+                                        style: "InfoWarning",
+                                        message: "-VFE................177",
+                                    },
+                                ]
+                            },
+                            {
+                                message: "",
+                                level: 3,
+                                flightPhasesInhib: [2, 3, 4, 8, 9, 10],
+                                isActive: () => (
+                                    (Simplane.getFlapsHandleIndex() == 3) &&
+                                    (Simplane.getIndicatedSpeed() > 185)
+                                ),
+                                actions: [
+                                    {
+                                        style: "InfoWarning",
+                                        message: "-VFE................185",
+                                    },
+                                ]
+                            },
+                            {
+                                message: "",
+                                level: 3,
+                                flightPhasesInhib: [2, 3, 4, 8, 9, 10],
+                                isActive: () => (
+                                    (Simplane.getFlapsHandleIndex() == 2) &&
+                                    (Simplane.getIndicatedSpeed() > 200)
+                                ),
+                                actions: [
+                                    {
+                                        style: "InfoWarning",
+                                        message: "-VFE................200",
+                                    },
+                                ]
+                            },
+                            {
+                                message: "",
+                                level: 3,
+                                flightPhasesInhib: [2, 3, 4, 8, 9, 10],
+                                isActive: () => (
+                                    (Simplane.getFlapsHandleIndex() == 1) &&
+                                    (Simplane.getIndicatedSpeed() > 230)
+                                ),
+                                actions: [
+                                    {
+                                        style: "InfoWarning",
+                                        message: "-VFE................230",
+                                    },
+                                ]
                             },
                         ]
                     },
