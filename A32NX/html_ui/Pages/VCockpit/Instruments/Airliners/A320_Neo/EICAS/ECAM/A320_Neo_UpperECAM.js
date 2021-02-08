@@ -953,7 +953,7 @@ var A320_Neo_UpperECAM;
                                     "TCAS"
                                 ],
                                 flightPhasesInhib: [1, 2, 3, 4, 5, 7, 8, 9, 10],
-                                isActive: () => this.getCachedSimVar("L:A32NX_SWITCH_TCAS_Position", "Enum") == 0,
+                                isActive: () => this.isInFlightPhase(6) && this.getCachedSimVar("L:A32NX_SWITCH_TCAS_Position", "Enum") == 0,
                             }
                         ]
                     },
